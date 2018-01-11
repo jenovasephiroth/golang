@@ -44,8 +44,9 @@ RUN set -eux; \
 	go version
 
 ENV GOPATH /go
+ENV GOROOT /usr/local/go
+ENV GOBIN /usr/local/go/bin
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
-
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
